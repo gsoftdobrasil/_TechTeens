@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Estilo para a lista de tarefas */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Estilo para cada item da lista de tarefas */
+      li {
+        background-color: #87c8e7;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Gerenciador de Tarefas</h2>
+    <!-- Input para adicionar nova tarefa -->
+    <input type="text" id="taskInput" placeholder="Adicione uma tarefa"></input>
+
+    <button id="addTaskButton">Adicionar</button>
+
+
+    <!-- Lista de tarefas -->
+    <ul id="taskList"></ul>
+    
+
+    <script>
+      // Recupera referências dos elementos da página
+      const taskInput = document.getElementById("taskInput");
+      const addTaskButton = document.getElementById("addTaskButton");
+      const taskList = document.getElementById("taskList");
+
+      // Adiciona uma nova tarefa à lista
+      addTaskButton.addEventListener("click", function() {
+        // Recupera o texto da tarefa
+        const taskText = taskInput.value;
+
+        // Verifica se o texto da tarefa está preenchido
+        if (taskText) {
+          // Cria um novo item na lista de tarefas
+          const newTask = document.createElement("li");
+          newTask.innerHTML = taskText + ' <button class="delete">X</button>';
+          taskList.appendChild(newTask);
+
+          // Limpa o input
+          taskInput.value = "";
+        }
+      });
+
+      // Remove uma tarefa da lista
+      taskList.addEventListener("click", function(event) {
+        if (event.target.className === "delete") {
+          const taskToRemove = event.target.parentElement;
+          taskList.removeChild(taskToRemove);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,2 +1,3 @@
 # _TechTeens
-Curso de programação
+
+- Curso de programação para adolescentes
