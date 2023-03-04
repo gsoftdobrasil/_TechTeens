@@ -1,5 +1,2 @@
-# Introdução ao React Native - 04/03
+# Variáveis Array e Objetos - 04/03
 
-
-- expo init OlaMundo
-- Type Script
