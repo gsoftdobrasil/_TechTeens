@@ -16,11 +16,3 @@ export default router;
     
     
     
-//     try {
-//       const customers = await customerModel.getEndereco();
-//       return res.json(customers);
-//     } catch (error) {
-//       console.error(error);
-//       return res.status(500).json({ message: 'Erro ao buscar clientes.' });
-//     }
-//   });
