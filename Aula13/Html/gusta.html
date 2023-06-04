@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="gusta.css">
+  <title>Página do Gustavo</title>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-title">
+        <div class="title">Página do Gustavo</div>
+    </div>
+    <div class="form-container">
+      <div>
+        <input type="text" id="cep" placeholder="CEP">
+        <button class="button" id="buscar"  type="submit" onclick="getCEPData()">Enviar</button>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <input type="text" id="endereco" placeholder="Endereço">
+      <input type="text" id="bairro" placeholder="Bairro">
+      <input type="text" id="cidade" placeholder="Cidade">
+      <input type="text" id="uf" placeholder="UF">
+    </div>
+  </div>
+
+
+  <script>
+    function getCEPData() {
+      const cepInput = document.getElementById('cep');
+      const cep = cepInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+      if (cep.length !== 8) {
+        alert('Por favor, informe um CEP válido com 8 dígitos.');
+        return;
+      }
+
+      const url = `https://viacep.com.br/ws/${cep}/json`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data.erro) {
+            alert('CEP não encontrado. Por favor, verifique o CEP informado.');
+          } else {
+            document.getElementById('endereco').value = data.logradouro || '';
+            document.getElementById('bairro').value = data.bairro || '';
+            document.getElementById('cidade').value = data.localidade || '';
+            document.getElementById('uf').value = data.uf || '';
+          }
+        })
+        .catch(error => {
+          console.error('Ocorreu um erro:', error);
+          alert('Ocorreu um erro ao obter os dados do CEP. Por favor, tente novamente.');
+        });
+    }
+  </script>
+
+</body>
+
+</html>

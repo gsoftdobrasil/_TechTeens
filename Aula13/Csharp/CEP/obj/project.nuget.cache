@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ajNEuK9flQwBpWiU0igFeFj6pY2HBpd+3VEFxC5GTjAmXfgWQhV8vk/0dm8IQrM0+euA+rPxpdc/dOgS/8CtPA==",
+  "success": true,
+  "projectFilePath": "D:\\GSOFT\\PROJETOS_WEB\\_TechTeens\\Aula13\\Csharp\\CEP\\CEP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gildicley\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

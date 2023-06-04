@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/20 22:43:28.000.379,=C:\Users\Gildicley\Documents\Embarcadero\Studio\Projects\Unit7.pas</Transaction>
+    <Transaction>2023/05/20 22:44:45.000.109,C:\Users\Gildicley\Documents\Embarcadero\Studio\Projects\Unit7.dfm=D:\GSOFT\PROJETOS_WEB\_TechTeens\Aula13\Delphi\untMenu.dfm</Transaction>
+    <Transaction>2023/05/20 22:44:45.000.109,C:\Users\Gildicley\Documents\Embarcadero\Studio\Projects\Unit7.pas=D:\GSOFT\PROJETOS_WEB\_TechTeens\Aula13\Delphi\untMenu.pas</Transaction>
+    <Transaction>2023/05/20 22:44:50.000.495,C:\Users\Gildicley\Documents\Embarcadero\Studio\Projects\Project7.dproj=D:\GSOFT\PROJETOS_WEB\_TechTeens\Aula13\Delphi\CEP.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

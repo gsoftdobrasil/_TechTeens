@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Formulário de Endereço</title>
+    <style>
+        body {
+            background-color: #3a3636;
+            flex: true;
+        }
+
+        .container {
+            background-color: #e6e6e6;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .titulo {
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 class="titulo">Formulário de Endereço</h2>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" placeholder="cep">
+            <button class="button" id="buscar" type="submit">Enviar</button>
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco">
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade">
+        </div>
+        <div class="form-group">
+            <label for="uf">UF:</label>
+            <input type="text" id="uf" name="uf">
+        </div>
+        
+        <div class="form-group">
+            <label for="morador">Nome:</label>
+            <input type="text" id="morador" name="morador">
+        </div>
+
+    </div>  
+    
+    <script>
+        // Função para fazer a requisição à API e preencher os campos do formulário
+        function preencherEndereco() {
+            // Obter o valor do CEP digitado pelo usuário
+            var cep = document.getElementById("cep").value;
+
+            // Fazer a requisição à API
+            fetch("https://apicep.gsoft.com.br:7851/" + cep)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(JSON.stringify(data));
+                    data.map((obj) => {
+                    console.log(JSON.stringify(obj));
+                    document.getElementById("endereco").value = obj.endereco;   
+                    document.getElementById("bairro").value = obj.bairro;
+                    document.getElementById("cidade").value = obj.cidade;
+                    document.getElementById("uf").value = obj.uf;
+                    document.getElementById("morador").value = obj.morador;
+                    })
+                    // Preencher os campos do formulário com os dados retornados pela API
+                })
+                .catch(error => {
+                    console.log("Ocorreu um erro:", error);
+                });
+        }
+
+        // Evento para chamar a função preencherEndereco() quando o botão for clicado
+        document.getElementById("buscar").addEventListener("click", preencherEndereco);
+    </script>    
+</body>
+</html>

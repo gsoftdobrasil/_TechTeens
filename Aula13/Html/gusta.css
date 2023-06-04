@@ -1,0 +1,60 @@
+<style>
+    body {
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: #f2f2f2;
+      width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .title {
+      color: #fff;
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    
+      padding: 10;
+    }
+
+    .form-container {
+        
+      margin-top: 20px;
+    }
+
+    .form-container input[type="text"] {
+      width: 250px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: green;
+      color: rgb(12, 166, 81);
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container-title {
+      background-color: #3f3b3b;
+      width: 80%;
+      margin: 10px auto;
+      padding: 10px;
+      text-align: center;
+    }
+
+
+    .button {
+      background-color: green;
+      color: rgb(255, 255, 255);
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
